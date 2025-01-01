@@ -4626,11 +4626,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/nikeshniki/Documents/Code/NetTutorial/api/api.csproj",
+      "projectUniqueName": "/Users/nikeshniki/Documents/GitHub/Finshark/api/api.csproj",
       "projectName": "api",
-      "projectPath": "/Users/nikeshniki/Documents/Code/NetTutorial/api/api.csproj",
+      "projectPath": "/Users/nikeshniki/Documents/GitHub/Finshark/api/api.csproj",
       "packagesPath": "/Users/nikeshniki/.nuget/packages/",
-      "outputPath": "/Users/nikeshniki/Documents/Code/NetTutorial/api/obj/",
+      "outputPath": "/Users/nikeshniki/Documents/GitHub/Finshark/api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/nikeshniki/.nuget/NuGet/NuGet.Config"
