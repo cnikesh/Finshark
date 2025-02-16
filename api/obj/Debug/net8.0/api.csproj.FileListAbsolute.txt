@@ -284,3 +284,5 @@
 /Users/nikeshniki/Documents/GitHub/Finshark/api/obj/Debug/net8.0/api.pdb
 /Users/nikeshniki/Documents/GitHub/Finshark/api/obj/Debug/net8.0/api.genruntimeconfig.cache
 /Users/nikeshniki/Documents/GitHub/Finshark/api/obj/Debug/net8.0/ref/api.dll
+/Users/nikeshniki/Documents/GitHub/Finshark/api/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/nikeshniki/Documents/GitHub/Finshark/api/bin/Debug/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using api.Data;
 
@@ -11,9 +12,11 @@ using api.Data;
 namespace api.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250216030306_PortfolioManyToMany")]
+    partial class PortfolioManyToMany
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,13 +54,13 @@ namespace api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "6d93fe8d-7584-4656-868d-a001a6304c70",
+                            Id = "4db6db78-7445-43b9-a1e2-d9e28af3b291",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "f56fe626-2008-4346-b01c-b196031dc0ed",
+                            Id = "84fcfb95-395c-4856-8780-071d4710e707",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -242,10 +245,6 @@ namespace api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AppUserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -262,8 +261,6 @@ namespace api.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AppUserId");
-
                     b.HasIndex("StockId");
 
                     b.ToTable("Comments");
@@ -274,12 +271,12 @@ namespace api.Migrations
                     b.Property<string>("AppUserId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("StockId")
+                    b.Property<int>("stockId")
                         .HasColumnType("int");
 
-                    b.HasKey("AppUserId", "StockId");
+                    b.HasKey("AppUserId", "stockId");
 
-                    b.HasIndex("StockId");
+                    b.HasIndex("stockId");
 
                     b.ToTable("Portfolios");
                 });
@@ -371,17 +368,9 @@ namespace api.Migrations
 
             modelBuilder.Entity("api.Models.Comment", b =>
                 {
-                    b.HasOne("api.Models.AppUser", "AppUser")
-                        .WithMany()
-                        .HasForeignKey("AppUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("api.Models.Stock", "Stock")
                         .WithMany("Comments")
                         .HasForeignKey("StockId");
-
-                    b.Navigation("AppUser");
 
                     b.Navigation("Stock");
                 });
@@ -396,7 +385,7 @@ namespace api.Migrations
 
                     b.HasOne("api.Models.Stock", "Stock")
                         .WithMany("Portfolios")
-                        .HasForeignKey("StockId")
+                        .HasForeignKey("stockId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
