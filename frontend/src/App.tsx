@@ -1,6 +1,9 @@
 import { Outlet } from 'react-router'
 import './App.css'
+import "react-toastify/ReactToastify.css"
 import Navbar from './Components/Navbar/Navbar'
+import { ToastContainer } from 'react-toastify'
+import { UserProvider } from './Context/UseAuth'
 
 function App() {
 
@@ -8,8 +11,11 @@ function App() {
   
   return (
     <>
-    <Navbar/>
-    <Outlet/>
+    <UserProvider>
+      <Navbar/>
+      <Outlet/>
+      <ToastContainer />
+    </UserProvider>
     </>
   )
 }

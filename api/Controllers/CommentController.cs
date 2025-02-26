@@ -54,10 +54,11 @@ namespace api.Controllers
 
             return Ok(comment.ToCommentDto());
         }
-        [HttpPost("{symbol:alpha}")]
-        public async Task<IActionResult> Create([FromRoute] string symbol, CreateCommentDto commentDto){
-
-            if(!ModelState.IsValid)
+        [HttpPost]
+        [Route("{symbol:alpha}")]
+        public async Task<IActionResult> Create([FromRoute] string symbol,[FromBody] CreateCommentDto commentDto)
+        {
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var stock = await _stockRepo.GetBySymbolAsync(symbol);
@@ -77,12 +78,11 @@ namespace api.Controllers
 
             var username = User.GetUsername();
             var appUser = await _userManager.FindByNameAsync(username);
-            
+
             var commentModel = commentDto.ToCommentFromCreate(stock.Id);
             commentModel.AppUserId = appUser.Id;
             await _commentRepo.CreateAsync(commentModel);
-
-            return CreatedAtAction(nameof(GetById), new { id = commentModel.Id}, commentModel.ToCommentDto());
+            return CreatedAtAction(nameof(GetById), new { id = commentModel.Id }, commentModel.ToCommentDto());
         }
         [HttpPut]
         [Route("{id:int}")]
