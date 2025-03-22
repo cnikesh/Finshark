@@ -1,6 +1,7 @@
 {
   "name": "frontend",
   "private": true,
+  "homepage": "https://cnikesh.github.io/Finshark/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
