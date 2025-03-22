@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   build-and-deploy:
-    name: Build
+    name: Build and Deploy
     runs-on: ubuntu-latest
 
     steps:
