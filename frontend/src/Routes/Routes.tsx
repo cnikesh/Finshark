@@ -15,7 +15,7 @@ import ProtectedRoute from "./ProtectedRoute";
 
 export const router = createBrowserRouter([
   {
-    path: "/Finshark/",
+    path: "/Finshark",
     element: <App />,
     children: [
       { path: "", element: <HomePage /> },
