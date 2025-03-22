@@ -8,7 +8,7 @@ const DesignPage = (props: Props) => {
     <div>
         <h1>Finshark Design Page</h1>
         <h2>This is finshark's design page. Various design aspects will be housed here.</h2>
-        <Table />
+        <Table config={undefined} data={undefined} />
     </div>
   )
 }
