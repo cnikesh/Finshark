@@ -31,12 +31,15 @@ jobs:
         run: |
             cd frontend
             npm run build
+      - name: Copy index file to 404 file
+        run: cp frontend/dist/index.html frontend/dist/404.html
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages
           path: frontend/dist
+
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
 
