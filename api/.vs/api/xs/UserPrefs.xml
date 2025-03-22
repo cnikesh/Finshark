@@ -1,0 +1,10 @@
+﻿<Properties StartupConfiguration="{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|https">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.api PreferredExecutionTarget="/Applications/Firefox.app" />
+</Properties>
