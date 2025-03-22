@@ -49,10 +49,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: production-files
-          path: ./dist
+          path: frontend/dist
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: frontend/dist
